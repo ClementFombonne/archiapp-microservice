@@ -91,3 +91,7 @@ document.getElementById("theme-toggle").addEventListener("click", function() {
         body.classList.replace("theme-sombre", "theme-clair");
     }
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+    update(msgs);
+})
