@@ -1,66 +1,58 @@
 // ==========================================
-// 3.1 - Un petit peu de programmation
+// Base de données simulée
 // ==========================================
-
-function fact(n) {
-    if (n === 0 || n === 1) return 1;
-    return n * fact(n - 1);
-}
-console.log("Factorielle de 6 :", fact(6));
-
-function applique(f, tab) {
-    let res = [];
-    for (let i = 0; i < tab.length; i++) {
-        res.push(f(tab[i]));
-    }
-    return res;
-}
-
-console.log("Applique fact à [1,2,3,4,5,6] :", applique(fact, [1, 2, 3, 4, 5, 6]));
-console.log("Applique fonction anonyme :", applique(function(n) { return (n+1); }, [1, 2, 3, 4, 5, 6]));
-
-
-// ==========================================
-// 3.2 & 3.3 - Un peu de dynamique et modèle complet
-// ==========================================
-
-// Structure de données enrichie avec méta-données (pseudo, date)
 let msgs = [
-    { pseudo: "Alice", date: new Date().toLocaleString(), msg: "Hello World" },
-    { pseudo: "Bob", date: new Date().toLocaleString(), msg: "Blah Blah" },
-    { pseudo: "Charlie", date: new Date().toLocaleString(), msg: "I love cats" }
+    { pseudo: "Alice", date: new Date().toLocaleString(), msg: "Hello World ! Le style devrait marcher maintenant." },
+    { pseudo: "Bob", date: new Date().toLocaleString(), msg: "C'est super joli cet effet de transparence." },
+    { pseudo: "Charlie", date: new Date().toLocaleString(), msg: "J'adore le Liquid Glass !" }
 ];
 
-// Fonction pour mettre à jour la liste dans le HTML
+// ==========================================
+// Fonction de mise à jour de l'affichage
+// ==========================================
 function update(data) {
     const listElement = document.getElementById("message-list");
-    listElement.innerHTML = ""; // 1. On efface la liste actuelle
+    listElement.innerHTML = ""; // On vide la liste
 
-    // 2. On parcourt le tableau
     data.forEach(item => {
+        // Le conteneur principal du message
         const li = document.createElement("li");
+        li.className = "message-item";
+
+        // L'en-tête (Pseudo + Date)
+        const header = document.createElement("div");
+        header.className = "message-header";
         
-        // Méta-données (date et pseudo)
-        const meta = document.createElement("small");
-        meta.textContent = `Posté par ${item.pseudo} le ${item.date}`;
+        const pseudoSpan = document.createElement("span");
+        pseudoSpan.className = "message-pseudo";
+        pseudoSpan.textContent = item.pseudo;
         
-        // Le contenu du message
-        const content = document.createElement("span");
+        const dateSpan = document.createElement("span");
+        dateSpan.className = "message-date";
+        dateSpan.textContent = item.date;
+
+        header.appendChild(pseudoSpan);
+        header.appendChild(dateSpan);
+
+        // Le texte du message
+        const content = document.createElement("div");
+        content.className = "message-content";
         content.textContent = item.msg;
 
-        // On assemble et on injecte dans la balise ul
-        li.appendChild(meta);
+        // Assemblage final
+        li.appendChild(header);
         li.appendChild(content);
         listElement.appendChild(li);
     });
 }
 
-// Lier le bouton "Mettre à jour" à la fonction update()
+// ==========================================
+// Écouteurs d'événements
+// ==========================================
 document.getElementById("update-btn").addEventListener("click", function() {
     update(msgs);
 });
 
-// Gérer l'envoi d'un nouveau message
 document.getElementById("send-btn").addEventListener("click", function() {
     const pseudo = document.getElementById("pseudo").value || "Anonyme";
     const messageText = document.getElementById("new-message").value;
@@ -70,19 +62,19 @@ document.getElementById("send-btn").addEventListener("click", function() {
         return;
     }
 
-    // Ajout dans la structure msgs
+    // Ajout au tableau
     msgs.push({
         pseudo: pseudo,
         date: new Date().toLocaleString(),
         msg: messageText
     });
 
-    // On réaffiche la liste et on vide le textarea
+    // Mise à jour de la vue
     update(msgs);
     document.getElementById("new-message").value = "";
 });
 
-// Changer le style (Clair / Sombre)
+// Changement de thème (Clair/Sombre)
 document.getElementById("theme-toggle").addEventListener("click", function() {
     const body = document.body;
     if (body.classList.contains("theme-clair")) {
@@ -92,6 +84,9 @@ document.getElementById("theme-toggle").addEventListener("click", function() {
     }
 });
 
+// ==========================================
+// Initialisation au chargement de la page
+// ==========================================
 window.addEventListener("DOMContentLoaded", () => {
     update(msgs);
-})
+});
