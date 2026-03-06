@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application de Messages</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-clair">
+    <header>
+        <h1>Le Forum Express</h1>
+        <button id="theme-toggle">Changer le thème (Clair/Sombre)</button>
+    </header>
+
+    <main>
+        <section id="messages-section">
+            <h2>Derniers Messages</h2>
+            <button id="update-btn">Mettre à jour la liste</button>
+            <ul id="message-list">
+                <li>Un premier message quelconque...</li>
+                <li>Encore du texte pour remplir l'espace.</li>
+                <li>Troisième message d'attente.</li>
+                <li>Bientôt, ces messages viendront du serveur !</li>
+                <li>Le petit dernier message de remplissage.</li>
+            </ul>
+        </section>
+
+        <section id="post-section">
+            <h2>Poster un nouveau message</h2>
+            <label for="pseudo">Pseudo :</label>
+            <input type="text" id="pseudo" placeholder="Votre pseudo...">
+            
+            <label for="new-message">Message :</label>
+            <textarea id="new-message" rows="4" placeholder="Écrivez votre message ici..."></textarea>
+            
+            <button id="send-btn">Envoyer le message</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

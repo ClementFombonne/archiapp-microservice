@@ -1,0 +1,102 @@
+/* Variables CSS pour gérer les deux thèmes (Partie 3.3) */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --header-bg: #4a90e2;
+    --header-text: #ffffff;
+    --section-bg: #ffffff;
+    --border-color: #cccccc;
+}
+
+body.theme-sombre {
+    --bg-color: #1e1e1e;
+    --text-color: #f4f4f9;
+    --header-bg: #2c3e50;
+    --header-text: #ffffff;
+    --section-bg: #2d2d2d;
+    --border-color: #555555;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    /* Transition douce lors du changement de thème */
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    color: var(--header-text);
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto; /* Marges de centrage */
+    padding: 0 1rem;
+}
+
+section {
+    background-color: var(--section-bg);
+    padding: 1.5rem;
+    margin-bottom: 2rem; /* Marge entre les blocs */
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+ul {
+    list-style-type: none; /* Liste non-ordonnée sans puces */
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+li small {
+    display: block;
+    color: #888;
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+
+label, input, textarea {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+textarea, input {
+    padding: 10px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button:hover {
+    opacity: 0.9;
+}
