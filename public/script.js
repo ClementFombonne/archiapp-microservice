@@ -44,7 +44,7 @@ function fetchAndUpdateMessages() {
 
                 li.appendChild(header);
                 li.appendChild(content);
-                listElement.appendChild(li);
+                listElement.prepend(li);
             });
         })
         .catch(function(error) {
@@ -85,6 +85,24 @@ document.getElementById("send-btn").addEventListener("click", function() {
 // Bouton de mise à jour manuelle
 document.getElementById("update-btn").addEventListener("click", function() {
     fetchAndUpdateMessages();
+});
+
+// Bouton de scroll vers le haut
+const scrollTopBtn = document.getElementById("scroll-to-top");
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 300) {
+        scrollTopBtn.classList.add("visible");
+    } else {
+        scrollTopBtn.classList.remove("visible");
+    }
+});
+
+scrollTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });
 
 // Changement de thème (déjà présent)
