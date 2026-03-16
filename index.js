@@ -92,7 +92,7 @@ app.get('/msg/del/:id', function(req, res) {
 });
 
 // Lancement du serveur
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Serveur prêt et à l'écoute sur le port ${PORT}...`);
 });
