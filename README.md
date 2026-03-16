@@ -1,6 +1,6 @@
 # 💬 Messageez - Chatting Client-Serveur
 
-[![App Status](https://img.shields.io/website?url=https%3A%2F%2Farchiapp-microservice.onrender.com&up_message=En%20ligne&down_message=Hors%20ligne&style=for-the-badge&label=Statut&color=success)](https://archiapp-microservice.onrender.com/)
+[![App Status](https://img.shields.io/website?url=https%3A%2F%2Farchiapp-microservice.onrender.com&up_message=En%20ligne&down_message=Hors%20ligne&label=Messageez&color=success)](https://archiapp-microservice.onrender.com/)
 
 Ce projet est une application web **Full-Stack** de type "Message Board" (forum de discussion). Il a été réalisé dans le cadre d'un TP pour apprendre à construire une architecture Client-Serveur complète.
 
