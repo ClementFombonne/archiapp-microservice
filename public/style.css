@@ -6,7 +6,7 @@
     --text-color: #1d1d1f;
     --text-color-meta: #86868b;
     --bg-app: #f5f5f7;
-    
+
     --glass-bg: rgba(255, 255, 255, 0.4);
     --glass-border: rgba(255, 255, 255, 0.3);
     --glass-shadow: rgba(0, 0, 0, 0.05);
@@ -24,7 +24,7 @@ body.theme-sombre {
     --text-color: #f5f5f7;
     --text-color-meta: #a1a1a6;
     --bg-app: #000000;
-    
+
     --glass-bg: rgba(20, 20, 20, 0.6);
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-shadow: rgba(0, 0, 0, 0.4);
@@ -62,8 +62,10 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 1.5rem;
+    padding-bottom: 6rem;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -85,10 +87,10 @@ main {
         align-items: flex-start;
     }
     #messages-section { flex: 2; }
-    #post-section { 
-        flex: 1; 
-        position: sticky; 
-        top: 2rem; 
+    #post-section {
+        flex: 1;
+        position: sticky;
+        top: 2rem;
     }
 }
 
@@ -278,4 +280,36 @@ button {
     0% { transform: translate(0, 0) scale(1); }
     50% { transform: translate(50px, 80px) scale(1.1); }
     100% { transform: translate(-30px, 40px) scale(1); }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 4rem 0 1rem 0;
+    z-index: 100;
+
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-app) 75%);
+
+    pointer-events: none;
+}
+
+footer a {
+    pointer-events: auto;
+
+    color: var(--text-color-meta);
+    font-size: 0.85rem;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, color 0.3s ease;
+
+    text-shadow: 0 0 10px var(--bg-app);
+}
+
+footer a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+    text-decoration: underline;
 }
