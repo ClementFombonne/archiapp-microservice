@@ -71,6 +71,8 @@ app.get('/msg/post/*', function(req, res) {
   // On récupère le pseudo via les paramètres (ex: ?pseudo=Alice)
   const pseudoAuteur = req.query.pseudo || "Anonyme";
 
+  const heure = new Date().toLocaleTimeString();
+  console.log(`[${heure}] 📝 NOUVEAU MESSAGE de ${pseudoAuteur} : "${texteMessage}"`);
   allMsgs.push({
     pseudo: pseudoAuteur,
     date: new Date().toLocaleString(),
