@@ -41,7 +41,7 @@ app.get('/cpt/inc', function(req, res) {
 // --- 2.4 Micro-service de gestion de messages ---
 // Base de données en mémoire avec métadonnées
 let allMsgs = [
-  { pseudo: "Admin", date: new Date().toLocaleString(), msg: "Bienvenue sur le nouveau serveur Node.js !" }
+  { pseudo: "Admin", date: new Date().toLocaleString(), msg: "Bienvenue sur Messageez !" }
 ];
 
 // Récupérer tous les messages

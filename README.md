@@ -1,7 +1,7 @@
-# 💬 Forum Express - Liquid Glass Edition
+# 💬 Messageez - Chatting Client-Serveur
 
-![Statut](https://img.shields.io/badge/Statut-Terminé-success)
-![Version](https://img.shields.io/badge/Version-1.0-blue)
+[![Messageez](https://img.shields.io/badge/Visiter-L'application-007aff?style=for-the-badge&logo=render&logoColor=white)](https://ton-projet.onrender.com)
+[![App Status](https://img.shields.io/website?url=https%3A%2F%2Fton-projet.onrender.com&up_message=En%20ligne&down_message=Hors%20ligne&style=for-the-badge&label=Statut&color=success)](https://ton-projet.onrender.com)
 ![Technologie](https://img.shields.io/badge/Stack-Node.js%20%7C%20Vanilla%20JS-f39f37)
 
 Ce projet est une application web **Full-Stack** de type "Message Board" (forum de discussion). Il a été réalisé dans le cadre d'un TP pour apprendre à construire une architecture Client-Serveur complète.
@@ -23,7 +23,7 @@ L'interface graphique adopte un design moderne **"Liquid Glass" (Glassmorphism)*
 ## 🚀 Installation et Lancement (Local)
 
 ### Via Nix (Recommandé)
-1. Clonez ce dépôt : `git clone [URL_DE_TON_DEPOT]`
+1. Clonez ce dépôt : `git clone https://github.com/ClementFombonne/archiapp-microservice.git`
 2. Lancez l'environnement isolé : `nix-shell`
 3. Installez les dépendances : `npm install`
 4. Lancez le serveur : `node index.js`
@@ -55,22 +55,3 @@ Le serveur expose les routes suivantes :
 L'application est déployée et accessible publiquement sur Render :
 👉 **[Messageez](https://archiapp-microservice.onrender.com/)**
 
----
-
-### 4. Le fichier `package.json` (Vérification)
-Assure-toi que ton fichier `package.json` (généré par la commande `npm init` ou `npm install express`) contient bien un script de démarrage. C'est ce que Render et les autres développeurs cherchent en premier. S'il n'y est pas, ajoute-le :
-
-```json
-{
-  "name": "forum-express",
-  "version": "1.0.0",
-  "description": "Un message board fullstack avec Express",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "express": "^4.x.x"
-  }
-}
-```
