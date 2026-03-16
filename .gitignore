@@ -1,3 +1,14 @@
+# Dépendances Node.js
+node_modules/
+
+# Fichiers de log
+npm-debug.log
+yarn-error.log
+
+# Fichiers direnv
 .direnv
 .envrc
-node_modules
+
+# Fichiers système (Mac/Windows)
+.DS_Store
+Thumbs.db
